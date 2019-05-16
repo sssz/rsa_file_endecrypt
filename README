@@ -1,5 +1,8 @@
 ##use Rsa to encrypt or decrypt all files unber a directory "./data"
 
+#requirement
+pip install pycryptodome
+
 #encrypt
 python endecrypt -mode e 
 #decrypt
