@@ -1,0 +1,6 @@
+##use Rsa to encrypt or decrypt all files unber a directory "./data"
+
+#encrypt
+python endecrypt -mode e 
+#decrypt
+python endecrypt -mode d

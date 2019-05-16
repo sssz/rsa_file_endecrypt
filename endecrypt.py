@@ -36,7 +36,7 @@ class FileRsa(object):
         self.private_decrypter = PKCS1_OAEP.new(self.private_key)
         self.encrypt_block = 200
         self.decrypt_block = 256;
-
+    #tested
     def Encrypt(self, filename):
         encrypted_data = ''
         with open(filename, 'rb') as f:
@@ -47,7 +47,7 @@ class FileRsa(object):
 
         with open(filename, 'wb') as out_file:
             out_file.write(encrypted_data)
-            
+    #tested       
     def Descrypt(self, filename):
         decrypt_data = ''
         with open(filename, 'rb') as in_file:
@@ -58,7 +58,7 @@ class FileRsa(object):
         
         with open(filename, 'wb') as f:
             f.write(decrypt_data)
-    
+    #not tested
     def RenameFile(self, dir,filename):
         filename_bytes = filename.encode('utf-8')
         filename_bytes_base64 = base64.encodestring(filename_bytes)
@@ -68,6 +68,7 @@ class FileRsa(object):
         print(os.path.join(dir, filename))
         print(os.path.join(dir,new_filename))
         os.rename(os.path.join(dir, filename), os.path.join(dir,new_filename))
+    #not tested
     def ReserveFilename(self, dir, filename):
         f = filename
         filename = filename[::-1][7:][::-1]
@@ -87,13 +88,11 @@ def Main(rootDir, mode):
             # 遍历文件，加密
             for f in files: 
                 filename = os.path.join(root, f)
-                print filename
                 file_ras.Encrypt(filename)
         elif mode == 'd':   
             # 遍历文件，解密
             for f in files: 
                 filename = os.path.join(root, f)
-                print filename
                 file_ras.Descrypt(filename)
             
 if __name__ == '__main__':
