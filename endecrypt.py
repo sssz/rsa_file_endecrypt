@@ -98,6 +98,6 @@ def Main(rootDir, mode):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-m", "--mode", required = True, choices = ['e', 'd'], type = str)
+    parser.add_argument("-p", '--path', required = True, type = str)
     args = parser.parse_args()
-    d = './data'
-    Main(d, args.mode)
+    Main(args.path, args.mode)

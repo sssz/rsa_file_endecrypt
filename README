@@ -3,7 +3,7 @@
 #requirement
 pip install pycryptodome
 
-#encrypt
-python endecrypt -mode e 
-#decrypt
-python endecrypt -mode d
+#encrypt files under data
+python endecrypt -m e -p data
+#decrypt files under data
+python endecrypt -m d -p data
